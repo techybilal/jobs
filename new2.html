@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work From Jobs – Get Paid to Review Apps</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body { scroll-behavior: smooth; }
+    .gradient-bg { background: linear-gradient(135deg, #3b82f6, #9333ea); }
+    #content-locker { display: none; position: fixed; inset: 0; width: 100%; height: 100%; z-index: 9999; }
+    #main-content { transition: opacity 0.6s ease; }
+
+    /* Animated Scroller */
+    .ticker {
+      background: linear-gradient(90deg, #3b82f6, #9333ea, #3b82f6);
+      background-size: 300% 300%;
+      animation: gradientMove 4s ease infinite;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      padding: 8px 0;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+      overflow: hidden;
+      position: relative;
+      z-index: 49;
+    }
+    .ticker-text {
+      display: inline-block;
+      white-space: nowrap;
+      animation: scrollText 10s linear infinite;
+    }
+    @keyframes scrollText {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Floating money background (optional aesthetic) */
+    .floating-icon {
+      position: absolute;
+      opacity: 0.15;
+      font-size: 1.5rem;
+      color: #fff;
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(10deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+  </style>
+
+  <script>
+    function openLocker() {
+      document.getElementById("main-content").style.opacity = "0";
+      setTimeout(() => {
+        document.getElementById("main-content").style.display = "none";
+        const locker = document.getElementById("content-locker");
+        locker.style.display = "block";
+        const iframe = document.getElementById("locker-frame");
+        iframe.src = "https://applocked.org/cl/i/82dlpr";
+      }, 500);
+    }
+  </script>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+  <div id="main-content">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full bg-white shadow z-50">
+      <div class="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
+        <h1 class="text-xl font-bold text-indigo-600">Work From Jobs</h1>
+        <nav class="space-x-4 text-sm font-medium hidden md:block">
+          <a href="#home" class="hover:text-indigo-600">Home</a>
+          <a href="#how" class="hover:text-indigo-600">How It Works</a>
+          <a href="#reviews" class="hover:text-indigo-600">Testimonials</a>
+          <a href="#info" class="hover:text-indigo-600">More Info</a>
+        </nav>
+        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold">100% Free to Join</span>
+      </div>
+
+      <!-- 💸 Animated Scroller -->
+      <div class="ticker">
+        <span class="ticker-text">🔥 Users earned $100+ today reviewing apps! | 💰 Fast payouts | 🌍 Join & start earning in minutes!</span>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative gradient-bg pt-36 pb-20 text-white overflow-hidden">
+      <div class="max-w-6xl mx-auto px-6 flex flex-col-reverse md:flex-row items-center justify-between gap-10">
+
+        <!-- Left Text Area -->
+        <div class="text-center md:text-left md:w-1/2 space-y-6">
+          <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">
+            💰 Get Paid to Review <span class="text-yellow-300 drop-shadow-md">Apps</span>
+          </h2>
+          <p class="text-lg opacity-95">
+            Download and install any 2 apps, run them for 2 minutes, and write a short review.
+            That’s it — simple tasks, quick payouts.
+          </p>
+          <ul class="space-y-2 text-sm md:text-base opacity-90">
+            <li>✔ No registration fee</li>
+            <li>⚡ Instant tasks</li>
+            <li>🌍 Open worldwide</li>
+          </ul>
+          <button onclick="openLocker()" 
+                  class="bg-white text-indigo-700 font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-gray-200 transition transform hover:scale-105">
+            Start Now — Get Tasks
+          </button>
+          <div class="pt-4 text-sm text-gray-200 opacity-80">
+            <span>✔ Trusted by 50,000+ users | 💳 Instant payouts</span>
+          </div>
+        </div>
+
+        <!-- Right Image Area -->
+        <div class="md:w-1/2 flex justify-center relative">
+          <div class="relative">
+            <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-yellow-400 via-green-400 to-indigo-500 blur-3xl opacity-30 animate-pulse"></div>
+            <!-- Replace below with your actual image path -->
+            <img src="Green_and_Yellow_Bold_Money_Hacks.png" 
+                 alt="Money Banner" 
+                 class="relative rounded-2xl shadow-2xl w-full h-auto object-cover border-4 border-white/20 transform hover:scale-[1.02] transition duration-500" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating Animated Text -->
+      <div class="absolute top-10 right-5 text-yellow-300 text-lg font-semibold animate-bounce hidden md:block">
+        💸 Earn up to $100 Today!
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 bg-white" id="why">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <h3 class="text-2xl font-semibold mb-10 text-gray-800">Why Choose Us</h3>
+        <div class="grid md:grid-cols-4 gap-6">
+          <div class="p-6 bg-gray-50 rounded-xl shadow hover:shadow-lg transition">
+            <h4 class="font-bold mb-2">⚡ Fast Payouts</h4>
+            <p>Receive money as soon as your task is verified.</p>
+          </div>
+          <div class="p-6 bg-gray-50 rounded-xl shadow hover:shadow-lg transition">
+            <h4 class="font-bold mb-2">🧠 No Experience Needed</h4>
+            <p>Start instantly — just follow simple steps.</p>
+          </div>
+          <div class="p-6 bg-gray-50 rounded-xl shadow hover:shadow-lg transition">
+            <h4 class="font-bold mb-2">✅ Legit Tasks</h4>
+            <p>All apps are verified from trusted partners.</p>
+          </div>
+          <div class="p-6 bg-gray-50 rounded-xl shadow hover:shadow-lg transition">
+            <h4 class="font-bold mb-2">💬 24/7 Support</h4>
+            <p>Friendly help anytime you need it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how" class="py-16 bg-gray-50">
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <h3 class="text-2xl font-semibold mb-10 text-gray-800">How to Start Earning</h3>
+        <div class="grid md:grid-cols-4 gap-6">
+          <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
+            <h4 class="font-bold mb-2">1️⃣ Download & Install</h4>
+            <p>Choose 2 apps from our verified list after signup.</p>
+          </div>
+          <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
+            <h4 class="font-bold mb-2">2️⃣ Run for 2 Minutes</h4>
+            <p>Use each app naturally for at least 2 minutes.</p>
+          </div>
+          <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
+            <h4 class="font-bold mb-2">3️⃣ Write a Review</h4>
+            <p>One or two meaningful sentences — your experience matters.</p>
+          </div>
+          <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
+            <h4 class="font-bold mb-2">4️⃣ Get Paid</h4>
+            <p>Instant payout via Paytm, PayPal, or Bank Transfer.</p>
+          </div>
+        </div>
+        <button onclick="openLocker()" class="inline-block mt-10 bg-indigo-600 text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-indigo-700 transition">Start Now — Begin Tasks</button>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="reviews" class="py-16 bg-white">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <h3 class="text-2xl font-semibold mb-10">What Our Users Say</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="p-6 bg-gray-50 rounded-xl shadow">
+            <p class="italic mb-4">“I made 500$ on my first day! Super easy and fast payout.”</p>
+            <h4 class="font-semibold">— Anita R. 🇮🇳</h4>
+          </div>
+          <div class="p-6 bg-gray-50 rounded-xl shadow">
+            <p class="italic mb-4">“Didn’t expect it to be this legit. Perfect for extra income.”</p>
+            <h4 class="font-semibold">— James P. 🇺🇸</h4>
+          </div>
+          <div class="p-6 bg-gray-50 rounded-xl shadow">
+            <p class="italic mb-4">“So simple! Just installed apps, wrote reviews, and got paid.”</p>
+            <h4 class="font-semibold">— Sara K. 🇬🇧</h4>
+          </div>
+        </div>
+        <p class="mt-6 text-yellow-500 text-xl">⭐⭐⭐⭐⭐ Rated 4.9/5 by 12,000+ users</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-gray-800 text-gray-200 text-center text-sm">
+      <p>© 2025 Work From Jobs. All rights reserved.</p>
+      <p class="text-gray-400 text-xs mt-2">This site is not affiliated with Google Play or App Store.</p>
+    </footer>
+  </div>
+
+  <!-- Full-Screen Locker -->
+  <div id="content-locker" class="bg-white">
+    <iframe id="locker-frame" src="" frameborder="0" width="100%" height="100%"></iframe>
+  </div>
+</body>
+</html>
